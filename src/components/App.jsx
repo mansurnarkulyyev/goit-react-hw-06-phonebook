@@ -10,7 +10,7 @@ import '../styles/styles.scss';
 import { useSelector } from 'react-redux';
 
 
-export function App() {
+function App() {
   const contacts = useSelector(state => state.contacts);
 
   // export function App() {
@@ -106,4 +106,6 @@ export function App() {
     </>
   );
   // }
-}
+};
+
+export default App;
