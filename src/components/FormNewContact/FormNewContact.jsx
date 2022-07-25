@@ -1,12 +1,14 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from 'redux/contacts/contacts-action';
+import { generate } from 'shortid';
 
 
 
-export function FormNewContact({ onSubmit, initialState }) {
+export function FormNewContact({ initialState }) {
   const [state, setState] = useState({ ...initialState });
   const { name, number } = state;
-
+  const dispatch = useDispatch();
 
   const handleChange = ({ target }) => {
     const { name, value, type, checked } = target;
@@ -19,7 +21,7 @@ export function FormNewContact({ onSubmit, initialState }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ ...state });
+    dispatch(addContact({ name, number, id: generate() }));
     reset()
   };
   const reset = () => {
@@ -62,8 +64,5 @@ export function FormNewContact({ onSubmit, initialState }) {
   // }
 }
 
-FormNewContact.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-}
 
 export default FormNewContact;

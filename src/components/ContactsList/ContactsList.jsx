@@ -47,7 +47,7 @@ ContactsList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ),
-  removeContact: PropTypes.func.isRequired,
+  // removeContact: PropTypes.func.isRequired,
 };
 
 export default ContactsList;

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/filter/filter-action';
@@ -40,8 +40,8 @@ const SearchContact = () => {
 // };
 
 SearchContact.propTypes = {
-  searchValue: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
+  // searchValue: PropTypes.string.isRequired,
+  // handleChange: PropTypes.func.isRequired,
 };
 
 export default SearchContact;
